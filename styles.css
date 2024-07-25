@@ -500,3 +500,24 @@ body.dark-mode .main-nav a:hover {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
 }
+/* New additions */
+
+@font-face {
+  font-family: 'OpenDyslexic';
+  src: url('path/to/OpenDyslexic-Regular.otf') format('opentype');
+}
+
+.dyslexia-font {
+  font-family: 'OpenDyslexic', sans-serif;
+}
+
+.light-theme { background-color: #fff; color: #333; }
+.dark-theme { background-color: #333; color: #fff; }
+.sepia-theme { background-color: #f4ecd8; color: #5b4636; }
+
+@media print {
+  /* Hide non-essential elements */
+  nav, footer, .font-size-controls { display: none; }
+  /* Ensure text is black on white background */
+  body { color: #000; background: #fff; }
+}
