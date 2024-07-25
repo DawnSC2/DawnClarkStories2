@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <link rel="icon" href="path/to/your/favicon.ico" type="image/x-icon">
   <meta charset="UTF-8">
   <meta name="description" content="The Chronicles of the Few - A Saga Forged in Starlight">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,7 +10,6 @@
   <title>The Chronicles of the Few</title>
 
   <!-- Link to your main stylesheet -->
-  <link rel="stylesheet" href="path/to/your/styles.css">
   
   <!-- Preload fonts and scripts -->
   <link rel="preload" href="css/styles.min.css" as="style">
@@ -78,14 +78,36 @@
   </header>
 
   <!-- Navigation -->
-  <nav>
-    <ul>
-      <li><a href="#home" accesskey="h" aria-label="Home">Home</a></li>
-      <li><a href="#about" accesskey="a" aria-label="About">About</a></li>
-      <li><a href="#stories" accesskey="s" aria-label="Stories">Stories</a></li>
-      <li><a href="#contact" accesskey="c" aria-label="Contact">Contact</a></li>
-    </ul>
-  </nav>
+<nav>
+  <ul>
+    <li><a href="#home" accesskey="h" aria-label="Home">Home</a></li>
+    <li><a href="#about" accesskey="a" aria-label="About">About</a></li>
+    <li><a href="#stories" accesskey="s" aria-label="Stories">Stories</a></li>
+    <li><a href="#contact" accesskey="c" aria-label="Contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- New Accessibility Controls Section -->
+<section id="accessibility-controls" class="accessibility-section">
+  <h2>Accessibility Options</h2>
+  <div class="font-size-controls">
+    <button onclick="changeFontSize('increase')">A+</button>
+    <button onclick="changeFontSize('decrease')">A-</button>
+  </div>
+  <button onclick="window.print()">Print This Page</button>
+  <select id="themeSelect" onchange="changeTheme(this.value)">
+    <option value="light">Light</option>
+    <option value="dark">Dark</option>
+    <option value="sepia">Sepia</option>
+  </select>
+  <button onclick="toggleDyslexiaFont()">Dyslexia-Friendly Font</button>
+  <div class="text-spacing-controls">
+    <label for="lineHeight">Line Height:</label>
+    <input type="range" id="lineHeight" min="1" max="2" step="0.1" value="1.5" onchange="adjustSpacing('lineHeight', this.value)">
+    <label for="letterSpacing">Letter Spacing:</label>
+    <input type="range" id="letterSpacing" min="0" max="5" step="0.5" value="0" onchange="adjustSpacing('letterSpacing', this.value)">
+  </div>
+</section>
 
   <!-- Main Content -->
 <main id="main-content">
